@@ -1,0 +1,15 @@
+<% provide :title, "ホームページ" %>
+<div>
+  <div class="container d-flex h-100 align-items-center">
+    <div class="background"
+            style="background-image:url(<%= asset_url "bg-masthead.jpg" %>)"></div>
+    <div class="mx-auto text-center">
+      <h1 class="mx-auto my-0 text-uppercase">ホームページ</h1>
+      <% if !logged_in? %>
+      <div>
+        <%= link_to "サインアップ", signup_path, class: "btn btn-lg btn-primary" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</divr>
