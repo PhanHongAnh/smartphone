@@ -1,0 +1,39 @@
+<div class="review-container">
+  <% @reviews.each do |review_day, list_reviews_in_day| %>
+    <p style="padding: 10px 30px 0;font-size: 20px;"><%= review_day %></p>
+
+    <div style="
+            display: grid;
+            grid-template-columns: auto auto;
+            padding: 10px;
+            margin: 10px;">
+      <% list_reviews_in_day.each do |review| %>
+        <div class="card list-review-in-day"style="margin: 10px;border-radius: 5px;box-shadow: 2px 6px 12px 2px rgba(10,10,10,.1);" >
+          <div class="card-image" >
+            <figure class="image" >
+              <img src="<%= review.banner%>" style="height: 200px;border-radius: 5px 5px 0 0;" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="<%= review.user.avatar %>" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4"><%= review.user.name %></p>
+                <p class="subtitle is-6">@<%= review.user.name.strip %></p>
+                <time class="is-6" datetime="2016-1-1"><%= review.created_at.strftime "%l:%M %p - %_m %b %Y" %></time>
+              </div>
+            </div>
+
+            <div class="content">
+              <%= review.content %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

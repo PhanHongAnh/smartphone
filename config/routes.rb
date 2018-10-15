@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :users
   resources :products
   resources :makers
+  resources :reviews
 end
